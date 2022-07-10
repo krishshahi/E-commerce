@@ -1,0 +1,6 @@
+.env
+node/node_modules
+api/node_modules
+api/uploads
+expapi/node_modules
+api/.env

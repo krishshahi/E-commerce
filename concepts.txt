@@ -1,0 +1,512 @@
+- HTML file , representation 
+- js, logical code 
+- HTML -> Hyper text markup language 
+    <> => tags 
+
+    - <img>
+
+    - tags are of two types
+        a. Singleton or open tags
+            <!DOCTYPE>, <link>, <br>, <hr>, <input>, <img>
+            <meta>
+        b. Paired or closed tags 
+            <div></div>
+            <html></html>
+            <head></head>
+            <body></body>
+            <p></p>
+            etc..
+as some propertites, attributes
+
+Every tags h
+Robots, crawler
+
+SEO 
+Meta-data
+
+nodejs 
+16.x => 
+12 >
+
+html, js
+
+MERN 
+    Mongo       =>  DB, json db,
+    Express     =>  Server, api, BE
+    React       =>  Frontend 
+    Node        =>  Run-time environment
+JS 
+TS
+
+
+3 develops
+Ecomm 
+
+A   => US
+    - auth 
+
+B   => Nepal
+    - category 
+
+C   => Italy
+    - product
+
+PM => A 
+
+-----> Old v1,
+-----> new V
+
+Main trunck 
+Repo Provider
+    - Bitbucket 
+    - Gitlab 
+    - Github
+
+A project on these repo providers 
+- member assign members to the project
+- clone project in their local machine 
+
+- Stage 
+- commit 
+- push/pull 
+    - merge 
+
+- master 
+
+master
+A ====> 5 days 
+B =============> 10 days
+    ===========> A + B
+C 
+
+master 
+.
+commit
+.
+.
+commit
+.
+A 
+.
+.
+.
+.
+.
+B
+
+
+master ======= new_branch
+                    .
+                    .
+                    .
+                    .
+                    feature 
+
+master => Production 
+staging => Staging Server 
+dev => Develop
+
+List of the commands 
+a. git initializtion 
+    - git init 
+b. to add remote 
+    - git remote add <name> <url> 
+c. To add the changes 
+    - git add . // adds all the changed files 
+    or,
+    - git add <filename>    // adds the file only
+d. To commit your changes 
+    - git commit -m "Commit Message"
+
+e. To push the code 
+    - git push <name> <branch>
+     .. dev, master
+     git push <remote_name> <local_branch>:<remote_branch>
+f. To pull the code 
+    - git pull <remote_name> <branch>
+g. To View the status of git ,
+    - git status
+h. to View the logs,
+    - git log 
+i. To Checkout to a new branch 
+    - git checkout -b <Branch_name>
+j. to checkout to an existing branch 
+    - git checkout <branch_name>
+k. to merge two local branches, 
+    - first checkout to the target, 
+        - git merge <source_branch>
+
+
+2.4.1
+
+
+protocol://domain:port/path/param?query
+
+protocol: http, https
+domain: 127.0.0.1, localhost
+port: 80, 443
+
+
+
+API 
+    - Application Programming Interface 
+
+
+Request listen =======> Respond send
+
+
+HTTP Response Codes 
+    1X - 8X
+    100 - 800
+
+    2x => Response 
+        200 => Success 
+        201 => Success
+    
+    3x => Redirection 
+        302 => Permanent Redirect
+    
+    4x => Req or res error/ file error
+        400 => Bad request 
+        403 => Access denied 
+        404 => Not found 
+
+    5x => Server Error 
+        500 => Script error 
+        502 => Bad gateway, 1:10
+        519 => Session Timeout
+    
+MVC Pattern 
+
+request 
+
+method
+url 
+
+Route
+--------->  
+Endpoint
+
+
+
+MongoDB 
+    - node js open source 
+    - 
+
+php - mysql 
+
+
+// 
+a. Relation DB 
+    - mysql, pgsql, sqlite, oracle, ms-sql 
+
+b. Non-relational DB
+    - mongodb - NoSQL
+        - Not Only SQL 
+
+orders 
+-------------------------
+id      user            product         qty         amount 
+---------------------------------------------------------------------------
+1       Ram             iPhone 12       1           128000
+---------------------------------------------------------------------------
+2       ram             iphne 13        3          480000
+---------------------------------------------------------------------------
+3       r am            iphpne12        1           120000
+
+
+
+users               products 
+-------------       ---------------------------
+id      name        id      name        price
+-------------       ---------------------------
+1       Ram         1       iPhone 12   128000
+-------------       ---------------------------
+2       Ram         2       iPhone 13   138000
+
+
+orders 
+-------------------------------------------------------------------------
+id      user_id     product_id      qty    discount      amount
+-------------------------------------------------------------------------
+1       1           1               1       0            128000
+-------------------------------------------------------------------------
+2       1           2               3       ...          480000
+-------------------------------------------------------------------------
+3       2           1               1       8000         120000
+
+
+
+Mongo: 
+    protocol://domain.tld:port
+
+    mongodb://127.0.0.1:27017
+
+a. To connect local mongodb use the following command (Via): 
+        mongo 
+b. To show the list of dbs
+    show dbs;
+    or 
+    show databases;
+
+c. To use or create db  
+    use db_name;
+d. To get currently selected db:
+    db
+
+Db => Database 
+table => collection 
+Row => document
+CRUD: 
+Create 
+    a. To insert a data :
+            db.table_name.insert(json_object)
+
+            json_object: schema for your table
+                - can be a single object    => one row at a time 
+                - or an array of objects    => Multiple row at a time
+    
+    b. To fetch data: 
+            db.table_name.find(filter, projection, options);
+                // array of objects
+                [{}]
+            db.table_name.findOne(filter, projection, options);
+                // object 
+                {}
+            Filter: 
+                {
+                    "name": "Sandesh Bhattarai",
+                    "role": "admin"
+                }
+
+
+                // age 
+                {
+                    $or: {
+                        "role": "admin",
+                        "age": {
+                            $gte: 16
+                        }
+                    }
+                }
+
+            Projection:
+                db.users.find({}, {_id: 1}, {
+                    sorts: {name: -1}
+                })
+            
+    c. Update Data 
+        db.table_name.update(filter, update, options);
+        Filter: 
+            same as fetch 
+            {
+                _id: ObjectId("id")
+            }
+        update: 
+            {
+                $set: body
+            }
+        options: 
+            {
+                upsert: true
+            }
+
+    d. Delete Data 
+        db.table_name.delete(filter)
+            Filter: 
+                same as fetch 
+
+
+Schema 
+    ER Diagram
+
+SQL 
+    - ORM 
+        - Object Relational Model 
+
+        MVC 
+            M => Model => DB 
+
+        DB 
+            - Table 
+                - Data 
+                    Rows/Col
+Model -> Table Point 
+e.g. 
+User => users 
+
+One Row set of a table -> An instance of a model 
+obj of User => users table one row set 
+
+Every column of a table => property of a model
+id, name, password, email => user object's property
+
+
+
+ODM 
+    => Object Document Modelling 
+    
+
+Authorization and Authentication 
+
+
+=> Authentication
+    - Finding out if the user is allowed to access the system or not 
+    e.g. Login 
+
+=> Authorization
+    - providing access to authenticated user
+    - after login 
+
+// session store web 
+session based 
+
+token based 
+    => Register 
+        - password encrypt saved (hashed password)
+    => Login 
+        - input password crosscheck with has value
+        - token / JWT
+            bearer
+    =>  Login check 
+        - header 
+            Authorization: bearer token 
+
+    {
+        name: "Sandesh",
+        email: "sandesh.bhattarai@kotuko.it"
+    }
+
+    // alphanumeric data 
+
+    // token generate 
+    // refresh token 
+    
+
+
+=> Auth and Authorization
+=> Banner 
+=> category
+=> Brands 
+=> products
+=> Users 
+=> Order 
+=> Payment 
+=> Pages
+
+
+ORM 
+====>
+    Object Relational Mapping 
+
+MVC 
+Model 
+    -> Class Model => Singular letter 
+    UserInfo
+    
+    userInfo 
+    id      name        address     ......
+    1       Abc         Xyz
+-> 
+    -> Table -> plural form 
+    userinfos
+
+
+    
+
+    Model Object -> One row set Denote
+
+    let user = new UserModel()
+
+    table columns are the propertites of that object 
+
+    user.name;
+
+    UserModel.findById(1)
+    .then((user) => {
+        user.name;  // Abc
+    })
+
+
+Frontend 
+    - representation of the imagination 
+    - HTML/CSS/js
+    - jQuery/Reactjs/Vuejs/Angularjs/Flutter
+    - Reactjs is a library
+    
+    - Knowledge of JS 
+    - How web works 
+    - REST Api 
+    - FE tools 
+    - CSS frameworks or Knowledge, 
+        - bootstrap, material ui, tailwind
+    - HTML concept 
+
+
+-> Design 
+    - html/css/js 
+    - psd 
+-> FE Developer 
+    - integration 
+    - API 
+        - call 
+        - response 
+        - result handle
+        - error handle 
+-> Complete
+
+Node 
+- Component (16.8)
+- State and Props 
+- 2 types 
+    - class based 
+    - function based 
+- Hook 
+- State management 
+    - Context 
+    - Central/Store => Redux 
+- Resource allocation 
+
+SPA => Single Page Application 
+    - index.html
+
+Existing web React 
+A new Project React 
+
+
+React maintained by: FB
+
+JS, TS
+
+JS
+
+
+// React Folder Structructure
+- node_modules 
+    - package location 
+- public 
+    - user access location 
+    - only static files
+- src 
+    - every source code to compile 
+
+
+public 
+    - index.html 
+src
+    - index.js
+
+
+import / export
+    - default 
+        - a page can have max of one default export 
+        if default export needed to be imported, 
+            - import export_name from "filename"
+    - named 
+        - exporting some variables, constants or a named class/function it's named export 
+        - to import named export 
+            import {named_export} from "filename"
+        - a file can have multiple named export 
+    - all
+        
+

@@ -1,0 +1,48 @@
+# State and Props 
+    - Props (Properties)
+        - All the incoming data to a component 
+        - props cannot be directly modified 
+    - State 
+        - the data preserved by the component 
+        - state can be managed within the component 
+
+# Component 
+    - A reusable code block of react which defines some views
+
+    Types:
+        a. Functional / Stateless 
+        b. Class Based / statefull
+
+# Life Cycle Of a component 
+    3 stages 
+
+    a. Mounting 
+        - from load to updating a state 
+        
+        a. constructor()
+            - set default state 
+            - receive props 
+            - initialize the component 
+
+        b. render()
+            - view call 
+            - with every state change, the render function will auto run 
+
+        c. componentDidMount()
+            - one time call, on first render 
+
+    b. Updating 
+        a. render()
+            - second call 
+        b. componentDidUpdated();
+
+    c. Unmounting 
+        - componentDidUnmount
+
+
+React Hook 
+    a. State Hook 
+        - to maintain state in react component
+
+    b. Effect Hook 
+        - side-effect
